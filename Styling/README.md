@@ -18,7 +18,7 @@ export ANDROID_HOME='/home/evgeny/Android/Sdk'
 
 ## StyleSheet API
 StyleSheet API example:
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Styles/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Styles/App.js)<br>
 ```javascript
 // App.js
 import { View, Text, StyleSheet } from 'react-native';
@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
 
 ## Multiple styles
 Multiple styles example:
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Styles/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Styles/App.js)<br>
 ```javascript
 // App.js
 // The last value in the styles array takes precedence
@@ -79,7 +79,7 @@ export const styles = StyleSheet.create({
 * If parent component has dimensions, children can use persentage dimension values.
 
 Box model example:
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Styles/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Styles/App.js)<br>
 ```javascript
 // App.js
 import { View, Text, StyleSheet } from 'react-native';
@@ -123,7 +123,7 @@ export const styles = StyleSheet.create({
 ## Shadow and elevation
 
 Shadow example:
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Styles/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Styles/App.js)<br>
 ```javascript
 // App.js
 ...

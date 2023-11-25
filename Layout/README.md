@@ -27,7 +27,7 @@ export ANDROID_HOME='/home/evgeny/Android/Sdk'
 
 ## Code setup
 Box component:<br>
-[Box.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/components/Box.js)<br>
+[Box.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/components/Box.js)<br>
 ```javascript
 // ./components/Box.js
 import { View, Text, StyleSheet } from 'react-native';
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
 ```
 
 Application file:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 import { StyleSheet, Text, View } from 'react-native';
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
 * Accepts integer value greater than or equal to 0.
 
 Flex example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 flex: 1 / flex: 3 = 25% of space / 75% of space
 ```javascript
 // App.js
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
 * Cross axis - horisontal (left to right).
 
 flexDirection example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 ...
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
 * Values - flex-start (default), flex-end, center, space-between, space-around, space-evenly.
 
 justifyContent example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 ...
@@ -171,7 +171,7 @@ container's cross-axis.
 * Values - strech (default), flex-start, flex-end, center, baseline.
 
 alignItems example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 ...
@@ -192,7 +192,7 @@ of each item independently.
 * Values - strech (default), flex-start, flex-end, center, baseline, auto (inherits from parent component's alignItems).
 
 alignSelf example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 ...
@@ -206,7 +206,7 @@ space within the container.
 * Values - nowrap (default, overflows), wrap, wrap-reverse.
 
 flexWrap example:
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 ...
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
 * Values - flex-start (default), flex-end, center, stretch, space-between, space-around.
 
 alignContent example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 ...
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
 * gap - gap between rows and columns.
 
 Gap example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 ...
@@ -274,7 +274,7 @@ in the container is distributed.
 
 
 flexBasis example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 ...
@@ -290,7 +290,7 @@ axis when their combined size exceeds the container's size.
 * Values - integers greater or equal to 0 (0 is default).
 
 flexShrink example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 import { StyleSheet, Text, View } from 'react-native';
@@ -327,7 +327,7 @@ flex vs flexGrow
 * flex: positive number also sets flexGrow: positive number, flexShrink: 1, flexBasis: 0
 
 flexGrow example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 import { StyleSheet, Text, View } from 'react-native';
@@ -376,7 +376,7 @@ container.
 * Used in fixed layouts (animation, strict coordinates position etc.)
 
 Relative and absolute layout example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/App.js)<br>
 ```javascript
 // App.js
 import { StyleSheet, Text, View } from 'react-native';
@@ -403,7 +403,7 @@ export default function App() {
 }
 ```
 
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/Layout/components/Box.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Layout/components/Box.js)<br>
 ```javascript
 // ./components/Box.js
 ...

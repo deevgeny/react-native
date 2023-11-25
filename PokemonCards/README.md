@@ -15,5 +15,5 @@ export ANDROID_HOME='/home/evgeny/Android/Sdk'
 
 ## Code
 
-[PokemonCard.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/PokemonCard/components/PokemonCard.js)<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/PokemonCards/App.js)<br>
+[PokemonCard.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/PokemonCard/components/PokemonCard.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/PokemonCards/App.js)<br>

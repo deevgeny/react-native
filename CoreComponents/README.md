@@ -49,7 +49,7 @@ touch handling and accessibility controls.
 * Can be compared to div tag.
 
 Nested view components:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)<br>
 `flex: 1` - expand component to available space.
 ```javascript
 // App.js
@@ -74,7 +74,7 @@ export default function App() {
 component to either a UITextView (iOS), a TextView (Android), or a 'p' (Web).
 
 Nested text components:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)
 ```javascript
 // App.js
 import { View, Text } from 'react-native';
@@ -103,7 +103,7 @@ counterparts:
 * 'img' for the Web
 
 Display images:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)
 ```javascript
 // App.js
 import { View, Text, Image, ImageBackground } from 'react-native';
@@ -135,7 +135,7 @@ export default function App() {
 * ScrollView require a bounded height to function properly.
 
 ScrollView example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)
 ```javascript
 // App.js
 import { View, Text, Image, ScrollView } from 'react-native';
@@ -169,7 +169,7 @@ export default function App() {
 * The Button component has platform-specific rendering for iOS and Android.
 
 Button example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)
 ```javascript
 // App.js
 import {
@@ -204,7 +204,7 @@ Pressable attributes:
 * onPressOut is called when the press gesture is deactivated.
 
 Pressable example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)
 ```javascript
 // App.js
 import {
@@ -243,7 +243,7 @@ information of prompt the user for a decision.
 necessary.
 
 Modal example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)
 ```javascript
 // App.js
 import {
@@ -294,7 +294,7 @@ displays the current time, Wi-Fi and network information, battery level
 other status icons.
 
 StatusBar example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)
 ```javascript
 // App.js
 import {
@@ -324,7 +324,7 @@ export default function App() {
 loading an app, submitting a form, or saving updates.
 
 ActivityIndicator example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)
 ```javascript
 // App.js
 import {
@@ -352,7 +352,7 @@ export default function App() {
 * Optionally, you can also specify a list of buttons.
 
 Alert example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)
 ```javascript
 // App.js
 import {
@@ -395,7 +395,7 @@ export default function App() {
 
 ## Custom components
 Create component:<br>
-[Green.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/components/Greet.js)
+[Green.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/components/Greet.js)
 ```javascript
 // components/Greet.js
 import { View, Text } from 'react-native';
@@ -410,7 +410,7 @@ export default function Greet({ name }) {
 ```
 
 Add component to app:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/CoreComponents/App.js)
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/CoreComponents/App.js)
 ```javascript
 // App.js
 import {

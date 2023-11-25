@@ -21,7 +21,7 @@ export ANDROID_HOME='/home/evgeny/Android/Sdk'
 * Values - screen - entire display size, window - viewport of application.
 
 Dimensions example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/DynamicUI/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/DynamicUI/App.js)<br>
 ```javascript
 // App.js
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
 * Dimensions do not update dynamically when rotating the device.
 
 How to fix it!<br>
-[app.json file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/DynamicUI/app.json)<br>
+[app.json file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/DynamicUI/app.json)<br>
 Set app to follow device rotation:
 ```json
 // app.json
@@ -101,7 +101,7 @@ Set app to follow device rotation:
 ```
 
 Add useState and useEffect to set dymanic behavior:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/DynamicUI/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/DynamicUI/App.js)<br>
 ```javascript
 // App.js
 import { useState, useEffect } from 'react';
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
 
 ## useWindowDimensions hook
 useWindowDimensions example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/DynamicUI/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/DynamicUI/App.js)<br>
 ```javascript
 // App.js
 import { StyleSheet, View, Text, useWindowDimensions } from 'react-native';
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
 rounded screen corners and camera notches.
 
 SafeAreaView example:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/DynamicUI/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/DynamicUI/App.js)<br>
 ```javascript
 // App.js
 import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
@@ -242,7 +242,7 @@ How to organize platform-specific code:
 * Platform-specific extensions
 
 ### Platform module
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/DynamicUI/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/DynamicUI/App.js)<br>
 ```javascript
 // App.js
 import { StyleSheet, View, Text, SafeAreaView, Platform } from 'react-native';
@@ -292,7 +292,7 @@ const styles = StyleSheet.create({
 
 ### Platform-specific extensions
 Create component for ios platform:<br>
-[CustomButton.ios.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/DynamicUI/components/CustomButton/CustomButton.ios.js)<br>
+[CustomButton.ios.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/DynamicUI/components/CustomButton/CustomButton.ios.js)<br>
 ```javascript
 // ./components/CustomButton/CustomButton.ios.js
 import React from "react";
@@ -317,7 +317,7 @@ export default CustomButton;
 ```
 
 Create component for android platform:<br>
-[CustomButton.android.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/DynamicUI/components/CustomButton/CustomButton.android.js)<br>
+[CustomButton.android.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/DynamicUI/components/CustomButton/CustomButton.android.js)<br>
 ```javascript
 // ./components/CustomButton/CustomButton.android.js
 import React from "react";
@@ -342,7 +342,7 @@ export default CustomButton;
 ```
 
 Import components and use in App.js:<br>
-[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native-tutorial/DynamicUI/App.js)<br>
+[App.js file](https://github.com/deevgeny/react-tutorials/blob/main/react-native/DynamicUI/App.js)<br>
 ```javascript
 // App.js
 // Import from component folder without specifying module extension
