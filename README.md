@@ -18,5 +18,9 @@ introduction to dynamic interfaces.
 example app with styling.
 * [List](https://github.com/deevgeny/react-tutorials/blob/main/react-native/List) -
 introduction to lists.
+* [Forms](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Forms) -
+introduction to forms.
+
+
 
 
