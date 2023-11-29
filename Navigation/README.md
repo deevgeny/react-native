@@ -9,6 +9,7 @@
 * [Stack navigation options](#stack-navigation-options)
 * [Dynamic stack navigator options](#dynamic-stack-navigator-options)
 * [Drawer navigation](#drawer-navigation)
+* [Tab navigation](#tab-navigation)
 
 ## Create new expo app project
 ```sh
@@ -25,7 +26,7 @@ npx expo install react-native-screens react-native-safe-area-context
 export ANDROID_HOME='/home/evgeny/Android/Sdk'
 ```
 
-Copy starter code from docs and paste it into `App.js` file:
+Copy starter code from docs and paste it into `AppStack.js` file:
 ```js
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -119,10 +120,10 @@ const styles = StyleSheet.create({
 });
 ```
 
-Add screens to App.js file:<br>
-[App.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/App.js)<br>
+Add screens to AppStack.js file:<br>
+[AppStack.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/AppStack.js)<br>
 ```js
-// App.js
+// AppStack.js
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { creteNativeStackNavigator } from '@react-navigation/native-stack'
@@ -229,9 +230,9 @@ export default function AboutScreen({ route }) {
 ```
 
 Set initial values for parameters:<br>
-[App.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/App.js)<br>
+[AppStack.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/AppStack.js)<br>
 ```js
-// App.js
+// AppStack.js
 ...
         <Stack.Screen
           name='About'
@@ -280,9 +281,9 @@ It can be applied to a specific screen or to all screens:
 * `<Stack.Screen options={{ ... }} ... />`
 
 Code example:<br>
-[App.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/App.js)<br>
+[AppStack.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/AppStack.js)<br>
 ```js
-// App.js
+// AppStack.js
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen
@@ -324,9 +325,9 @@ Pass props with `navigation.navigate`:<br>
 ```
 
 Pass callback with descruturing props to options:<br>
-[App.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/App.js)<br>
+[AppStack.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/AppStack.js)<br>
 ```js
-// App.js
+// AppStack.js
         <Stack.Screen
           name='About'
           component={AboutScreen}
@@ -355,3 +356,275 @@ export default function AboutScreen({ navigation, route }) {
 ```
 
 ## Drawer navigation
+* Drawer Navigator introduces a hidden menu, sliding from either side of the
+screen.
+* It is particularly beneficial in apps with multiple main sections that
+require a neat and organized navigation structure.
+* createDrawerNavigator() - function to create Drawer Navigator.
+
+[Drawer navigator docs](https://reactnavigation.org/docs/drawer-navigator)
+[React Reanimated docs](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started)
+
+### Install
+```sh
+# Install drawer navigator
+npm install @react-navigation/drawer
+
+# Install dependencies
+npx expo install react-native-gesture-handler react-native-reanimated
+
+# Add to babel.config.js file:
+    plugins: [
+      ...
+      'react-native-reanimated/plugin',
+    ],
+
+# Add -c to clear the cach in package.json file:
+  "scripts": {
+    "start": "expo start -c",
+```
+
+### DashboardScreen component
+Navigation
+* `navigation.toggleDrawer()` - toggle drawer programatically.
+* `navigation.jumpTo()` - go to drawer screen programatically.
+
+[DashboardScreen.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/screens/DashboardScreen.js)<br>
+```js
+// ./screens/DashboardScreen.js
+import { View, Text, StyleSheet, Button } from "react-native";
+
+const DashboardScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>DashboardScreen</Text>
+      <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
+      <Button title="Settings" onPress={() => navigation.jumpTo("Settings")} />
+    </View>
+  );
+};
+
+export default DashboardScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 16,
+  },
+});
+```
+
+### SettingsScreen component
+[SettingsScreen.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/screens/SettingsScreen.js)<br>
+```js
+// ./screens/SettingsScreen.js
+import { View, Text, StyleSheet } from "react-native";
+
+const SettingsScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>SettingsScreen</Text>
+    </View>
+  );
+};
+
+export default SettingsScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 16,
+  },
+});
+```
+
+### App file
+Drawer options
+* `title` - drawer main title.
+* `drawerLabel` - menu item label.
+* `drawerActiveTintColor` - active menu item style.
+* `drawerActiveBackgroundColor` - active menu item style.
+* `drawerContentStyle` - object for drawer content style.
+
+[AppDrawer.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/AppDrawer.js)<br>
+```js
+// AppDrawer.js
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import DashboardScreen from "./screens/DashboardScreen";
+import SettingsScreen from "./screens/SettingsScreen";
+
+const Drawer = createDrawerNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Dashboard">
+        <Drawer.Screen
+          name="Dashboard"
+          component={DashboardScreen}
+          options={{
+            title: "My dashboard",
+            drawerLabel: "Dashboard label",
+            drawerActiveTintColor: "#333",
+            drawerActiveBackgroundColor: "lightblue",
+            drawerContentStyle: {
+              backgroundColor: "#c6cbef",
+            },
+          }}
+        />
+        <Drawer.Screen name="Settings" component={SettingsScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}
+```
+
+## Tab navigation
+* Tab Navigation offers a way to switch between different screens by tapping
+on a tab which is usually dipslayed at the bottom of the screen.
+* It's a common and intuitive navigation pattern fount in many apps, providing
+a seamless, user-friendly experience.
+
+[Bottom Tab Navigator docs](https://reactnavigation.org/docs/bottom-tab-navigator)
+
+
+### Install
+```sh
+npm install @react-navigation/bottom-tabs
+```
+
+### ProfileScreen component
+[ProfileScreen.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/screens/ProfileScreen.js)<br>
+```js
+// ./screens/ProfileScreen.js
+import { View, Text, StyleSheet } from "react-native";
+
+const ProfileScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>ProfileScreen</Text>
+    </View>
+  );
+};
+
+export default ProfileScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 16,
+  },
+});
+```
+
+### CourseListScreen component
+[CourseListScreen.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/screens/CourseListScreen.js)<br>
+```js
+// ./screens/CourseListScreen.js
+import { View, Text, StyleSheet } from "react-native";
+
+const CourseListScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>CourseListScreen</Text>
+    </View>
+  );
+};
+
+export default CourseListScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 16,
+  },
+});
+```
+
+### App file
+Tab screenOptions
+* `tabBarLabelPosition` - label position relative to icon.
+* `tabBarShowLabel` - show or hide label.
+* `tabBarActiveTintColor` - active tab bar item style.
+* `tabBarInActiveTintColor` - inactive tab bar item style.
+* `tabBarBadge` - add a badge to icon. 
+
+Tab screen item options
+* `tabBarLabel` - tab bar item label.
+* `tabBarIcon` - tab bar item icon.
+
+Nesting navigators
+* nest stack navigator - see export function in [AppStack.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/AppStack.js)<br>
+
+[AppTab.js](https://github.com/deevgeny/react-tutorials/blob/main/react-native/Navigation/AppTab.js)<br>
+```js
+// AppTab.js
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import SettingsScreen from "./screens/SettingsScreen";
+import CourseListScreen from "./screens/CourseListScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { AboutStack } from "./AppStack";
+
+const Tab = createBottomTabNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={{
+          //   tabBarShowLabel: false,
+          tabBarLabelPosition: "below-icon",
+          tabBarActiveTintColor: "purple",
+        }}
+      >
+        <Tab.Screen name="Course List" component={CourseListScreen} />
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarLabel: "My Profile",
+            tabBarIcon: ({ color }) => <Ionicons name={"person"} size={20} color={color} />,
+            tabBarBadge: 3,
+          }}
+        />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen
+          name="About Stack"
+          component={AboutStack}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+```
